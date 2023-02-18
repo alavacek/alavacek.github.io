@@ -163,101 +163,107 @@
 			<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
-					<h1 class="major">1/22 - 2/4</h1>
+					<h1 class="major">2/5 - 2/19</h1>
 
 					<!--Time Summary-->
 					<div style="padding:0px 0px 40px 0px">
-						<h2>Time Summary: 13 hours</h2>
+						<h2>Time Summary: 13.5 hours</h2>
 						<div style="padding-left: 20px">
-							<h3 style="font-weight: normal"><strong>Studio Meetings:</strong> 4 hours</h3>
-							<h3 style="font-weight: normal"><strong>Camera Movement:</strong> 3 hours</h3>
-							<h3 style="font-weight: normal"><strong>Tutorial Text System:</strong> 1 hours</h3>
-							<h3 style="font-weight: normal"><strong>Encounter System:</strong> 4.5 hours</h3>
-							<h3 style="font-weight: normal"><strong>Dev Log:</strong> 1.5 hour</h3>
+							<h3 style="font-weight: normal"><strong>Studio Meetings:</strong> 4.5 hours</h3>
+							<h3 style="font-weight: normal"><strong>Debugging:</strong> 4 hours</h3>
+							<h3 style="font-weight: normal"><strong>Crushing Trap:</strong> 2.5 hours</h3>
+							<h3 style="font-weight: normal"><strong>Scene Transition:</strong> 1 hour</h3>
+							<h3 style="font-weight: normal"><strong>Cutscene Manager:</strong> 1.5 hours</h3>
 						</div>
 					</div>
 
 					<!--Topic-->
-					<h2>Camera Movement</h2>
+					<h2>Debugging</h2>
 					<div style="padding-left: 20px">
+						<h3>Encounter System Soft Block</h3>
 						<p>
-							My first task of the week was to create a camera movement for Project Drift.  In a previous rapid prototype I worked on, I had set up bounded camera movements and triggers
-							by hardcoding the cameras bounds into a script, and various triggers that would change these hard coded camera bounds.  I was never able to figure out a way to set up 1 polygon
-							collider that would act as a bound for the camera, and make the camera be able to switch between these various desired bounds.
+							For developers, week 4 was spent debugging.  First, I handled a soft block bug that was occuring with my encounter system.
+							Players could shoot, or at this time use their giant sword (another bug I fixed later), to kill enemies before they triggered
+							the encounter, and thus causing the player to get stuck in the encounter barriers.  I actually had already checked whether all the
+							enemies were still alive, but had forgot to remove them from the list of active enemies like I do once the encounter begins, and so fixing
+							this bug took less than 10 minutes of coding, and 10 minutes of testing.
 						</p>
 
+						<h3>Dashing Soft Block</h3>
 						<p>
-							However for Project Drift, I discovered the magic of CineMachines!  They do everything I was hoping could and would be done in my Rapid Prototype from last October, and more!  It is
-							definetely something I will use in projects going forth, and when I do eventually expand the prototype I made back then, I plan to redu all the camera movement with cinemachines
-							to make expanding the game easier.
+							The next bug I tackled was much trickier.  We had a bug where the player could lodge themselves off the playable/walkable surface by dashing,
+							and get themselves stuck.  I had not worked on the dashing system and fall manager in previous weeks, so about an two hours of my time was spent
+							diagnosing why the problem was happening in the first place.  After understandign the code, I assumed the bug had to do with our fall manager's last ground position variable
+							being set wrong, or the ground character controller attached to the player not knowing when it was or was not on the ground.  By using breakpoints and my debugger, I found
+							that it was both, especially since when the player swong their giant sword the player's ground controller would think it left the ground due to the sword
+							overlapping with the player's box collider, and issue arose here.  I was able to significantly minimize the issue by fixing the player's sword, which I explain what was
+							the issue there below, and by changing the Update statement that calculated where the player's last ground position was, to a FixedUpdate which makes it run more
+							often.
 						</p>
 
-						<h3>Cinemachines!</h3>
+						<div style="padding-left: 20px">
 
-
-						<div style="padding-left: 20px; display: inline-block;">
-							<div class="col-4" style="padding: 10px">
-								<span class="image fit"><img src="post2images/cinemachineinspector.png" alt="" /></span>
-								<p>
-									This is what the set up looks like in hierarchy.  Main Camera has a bunch of Virtual Cameras attached to it.  Each virtual camera can have what it follows set,
-									which in this case is the player, a polygon collider boundery set which tells the virtual camera the edge of where it should be able to look, and even cool options
-									like damping which tells the camera whether it should always try to have the player directly in the center of the screen (with exceptions to bounds
-									of course) or if the player runs to the right, if the camera should lag behind it and not be able to catch up until the player stops or changes directions.
-									Cinemachines and it's virtual cameras definetely add a little aspect of juice that would be hard to handcode
-								</p>
-							</div>
-
-							<div style="display:flex">
-								<div style="float:left; padding: 20px; width: 400%">
-									<img src="post2images/cinemachinebrain.png" alt="" width="100%" style="float:left; padding: 10px" />
-									<p style="padding: 10px; display: inline-block; font-display: block">
-										This is the inspector of the Main camera.  Note the Cinemachine Brain attached which does most of the hard work for me.  It is
-										also worth mentioning the Cinemachine Brain Controller I created and attached.  I made this so that all virtual cameras that have lower priorty and are not selected
-										at the start at deactivated to avoid bugs in the future.
-									</p>
-								</div>
-
-								<div style="float: left; padding: 20px">
-									<img src="post2images/cinemachinevirtual.png" alt="" width="100%" style="float: left; padding: 10px" />
-									<p style="padding: 10px; display: inline-block; font-display: block">
-										This is an example of a virtual cinemachine. Note that is it set to follow the player, and the Bounding 2D Shape is set
-										to a composite collider incase designers want to change it from a box to a polygon in the future.
-									</p>
-
-								</div>
+							<div>
+								<img src="post3images/lastgroundpos1.png" alt="" style="max-height: 100%; max-width: 100%" />
+								<img src="post3images/lastgroundpost2.png" alt="" style="max-height: 100%; max-width: 100%" />
 							</div>
 
 						</div>
+
+						<h3>Giant Sword</h3>
+						<p>
+							Probably one of the first bugs that everyone noticed while play testing was that the sword was huge.  At first I assumed an artist may have just dragged and dropped the sword sprite into the
+							sword prefab without adjusting the sprites size, but interestingly enough, the swords box collider matched the size of the huge sword sprite.  I was quick to realize that the player prefab in our
+							tutorial was scaled down 10x the size of the actual prefab, and preassumingly the normal sized player prefab was what the developer working on weapons had tested the sword with in another scene.
+							Although more issues may arise from the player in our main scenes being scaled down to a tenth of the size it is intended to be, I simply implemented precautionary measures that spawns the sword and other weapons in
+							while considering it's lossyscale.  I also let other developers know where the issue had arose so as they continue to write more code, they will make sure the objects they spawn in are relative to the
+							size of the player when they need to be.
+						</p>
+
+						<h3>Dashing Without Stamina Bug</h3>
+						<p>
+							Stamina was already implemented and so fixing this bug was pretty quick.  I just needed to check that the player had enough stamina to perform a dash or chain dash before allowing them to do so.  The logic was simple
+							and the bug was fixed with 2 if statements.
+						</p>
+
+
 					</div>
 
 					<!--Topic-->
 					<div style="padding:0px 0px 40px 0px">
-						<h2>Tutorial Text System</h2>
+						<h2>Crushing Trap</h2>
 						<div style="padding-left: 20px">
 							<p>
-								Overall this was a pretty straight forward task.  I had to first create a trigger that would check if the player entered it, then set the TutorialText to active, then change its text to
-								whatever the trigger's Serialized string TextToShow field said.  Using coroutines I was able to add a little aspect of juice by fading this in and out.  The only real obstacle I had
-								was adding an option for if they want a background behind the text, in our case most likely just a black background, and if so how to change its size accordingly to the text.  This
-								again was fairly straight forward as I just had to access the text's preferred width and height, and set the black background to that size.  I did find that it was a little tight to the text
-								when I did that, so I added a range Serialized field float called padding which will thicken the black box the higher that the number is set to.
+								The level designers this week had asked the other level developer and I to implemented a few traps into the game, namingly an arrow trap, fire trap, and a crushing trap.  I was assigned to complete the crushing
+								trap while the other developer took on the others.  First I set up a Basic Trap base class, so that the Trap Trigger I started to implement could be used not only to activate the crushing trap I was implementing, but
+								also the traps my fellow developer was going to create.  Then, as a derived class I created the Crushing trap.  The logic behind the crushing trap is quite simple, but at first, figuring out the correct ray casting in order to
+								avoid touching the player scripts was a little tricky.  What I went with was, once the trap is activated, the trap's crushing animation begins.  When the player first collides with the trap, the crushing trap script
+								determines, where is the player and which side of the player should we check is going to make contact with something, and thus be crushed.  Then, as long as the player is still colliding with the trap, I used raycasting
+								to check is the player's box collider touching something other than this, the crushing trap, on the other side of where the crushing trap is touching it.  If so, the player has been crushed, and let's access its health script
+								and deal the maximum amount of damage, thus killing the player.
 							</p>
 						</div>
 					</div>
 
 					<!--Topic-->
 					<div style="padding:0px 0px 40px 0px">
-						<h2>Encounter System</h2>
+						<h2>Cutscenes and Scene Transitions</h2>
 						<div style="padding-left: 20px">
 							<p>
-								Creating the encounter system was probably my biggest challenge of the week.  The biggest challenge was mostly deciding how I wanted to structure it.  I knew this would be used
-								probably every day by designers and so I wanted to make sure it would make sense for them to understand without having to try and understand my code.  I also was asked to make a
-								confluence page for the encounter system, so I'll link that below instead of reexplaining how I did everything.
+								Creating the cutscene and scene transitions was probably my biggest challenge of the week.  The scene transitions was fairly simple, as it is just a trigger that queues the scene manager I created to start a coroutine to fade in a transition panel, 
+								and then once the fade in is complete, load a new scene which, if a scene manager has been set up, fades a transition screen out.  The tricky part was mainly the cutscenes.  Luckily, Unity has playable directors, which by using animations set to players,
+								switching between vcams, etc. can create some pretty awesome cutscenes.  The main problem I ran into was that once the cutscene started and then ended, the player still could not move.  Additionally, sometimes when the player would walk
+								through a cutscene trigger, they would be shifted over to the exact position the animation's transform started at.  To fix both of these, I changed the player's animator culling mode to Cull Update Transforms.  Here's an example of how these
+								cutscenes can look with the scene transitions.
 							</p>
-							<a href=https://studio.eecs.umich.edu/confluence/display/PD/Guide%3A+Encounter+System class="active">Confluence Page</a>
+							<h3>
+								<a href=https://studio.eecs.umich.edu/confluence/display/PD/Guide%3A+Cutscenes class="active">Confluence Page</a>
+							</h3>
+
 							<center>
 								<video width="960" height="720" controls>
-									<source src="post2images/EncounterSystem.mp4" type="video/mp4">
-									<source src="post2images/EncounterSystem.ogg" type="video/ogg">
+									<source src="post3images/cutscene.mp4" type="video/mp4">
+									<source src="post3images/cutscene.ogg" type="video/ogg">
 									Your browser does not support the video tag.
 								</video>
 							</center>
