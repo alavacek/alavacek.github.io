@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	
+		<style>
+			#hcg-slider-1 .hcg-slide-container {
+				width: auto;
+				height: auto;
+			}
+
+			.hcg-slider {
+				text-align: center;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.hcg-slide-container {
+				max-width: 100%;
+				display: inline-block;
+				position: relative;
+			}
+
+			.hcg-slides {
+				display: none;
+				text-align: center;
+				overflow: hidden;
+			}
+
+				.hcg-slides img {
+					max-width: 100%;
+					max-height: 100%;
+					display: inline-block;
+					border-radius: 5px;
+					border: solid 1px #a0a0a0;
+					vertical-align: middle;
+				}
+
+			.hcg-slide-text {
+				color: #ffffff;
+				font-size: 14px;
+				padding: 3px 5px;
+				position: absolute;
+				bottom: 0;
+				border-radius: 5px;
+				left: 50%;
+				text-align: center;
+				text-shadow: 0 0 2px #000;
+				background-color: rgba(255,255,255,0.30);
+				display: inline-block;
+				transform: translate(-50%, -5px);
+			}
+
+			.hcg-slide-prev, .hcg-slide-next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+				margin-top: -22px;
+				color: #fff;
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+				text-decoration: none;
+			}
+
+			.hcg-slide-next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			.hcg-slide-prev {
+				left: 0;
+				border-radius: 0 3px 3px 0;
+			}
+
+				.hcg-slide-prev:hover, .hcg-slide-next:hover {
+					background-color: #000c;
+				}
+
+			.hcg-slide-dot-control {
+				margin-top: 10px;
+				text-align: center;
+			}
+
+			.hcg-slide-dot {
+				cursor: pointer;
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+			}
+
+				.hcg-slide-dot.dot-active {
+					background-color: #717171;
+				}
+
+			.hcg-slide-number {
+				color: #ffffff;
+				font-size: 12px;
+				padding: 4px 7px;
+				position: absolute;
+				border-radius: 5px;
+				top: 5px;
+				left: 5px;
+				background-color: rgba(255,255,255,0.30);
+			}
+			/************CSS Animation***********/
+
+			.animated {
+				animation-name: fadeIn;
+				animation-duration: 1s;
+			}
+
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			.fadeIn {
+				animation-name: fadeIn;
+			}
+		</style>
+
+
+
+	
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="title">Home</a>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="ProjectDriftIndex.html" class="active">Dev Blog</a></li>
+					
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<h1 class="major">3/19 - 4/2</h1>
+
+					<!--Time Summary-->
+					<div style="padding:0px 0px 40px 0px">
+						<h2>Time Summary: 14 hours</h2>
+						<div style="padding-left: 20px">
+							<h3 style="font-weight: normal"><strong>Studio Meetings:</strong> 4 hours</h3>
+							<h3 style="font-weight: normal"><strong>Art Implementation Session:</strong> 5 hours</h3>
+							<h3 style="font-weight: normal"><strong>Independent Art Implementation:</strong> 5 hours</h3>
+						</div>
+					</div>
+
+					<!--Topic-->
+					<h2>Art Implementation</h2>
+					<div style="padding-left: 20px">
+						<h3>Dash Particles</h3>
+						<p>
+							One of my tasks for the art implementation session was to implement previously made dash particles into the game.  This was fairly straight forward, and the only
+							challenge was configuring the particles in a way which that certain ones would play for the first dance and only specific others would continue for the chain dash, but even
+							this was simple.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post5images/Dash.mp4" type="video/mp4">
+								<source src="post5images/Dash.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+						<h3>Encounter "Demon Fire"</h3>
+						<p>
+							Next I had to work on implementing the art for the "demon fire" which keeps players bound to certain areas once an encounter starts and until it ends.  Since the fire starts inactive and is
+							set to active once the encounter starts, getting it to play a certain animation on setactive was simple.  The tricky part was how to play an animation then set it inactive.  What I ended up doing is
+							creating a "SetInactiveOnExit" behavior for the "Deactivate" state, and inside of the Switch system that calls setting things inactive, I check if whatever we are setting inactive has an animator and has
+							a state called Deactivate, call that animation instead of setting the gameobject inactive.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post5images/EncounterFire.mp4" type="video/mp4">
+								<source src="post5images/EncounterFire.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+
+						<h3>Ships</h3>
+						<p>
+							I also worked on implementating the ship art assets we have.  Last week one of my fellow programmers finished working on a basic version of verticallity, so by making a prefab variant of his already existing
+							ladder prefab, I was able to get the illusion of going up and down the stairs of the ship.  The programmer who worked on verticality did admit that there were several bugs in place with verticality and getting the
+							system to work is a little hit or miss at this point, but after playing around with the triggers for about 1-2 hours on my newly made prefab variant, I was finally able to get it to start working how I wanted it to.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post5images/ship.mp4" type="video/mp4">
+								<source src="post5images/ship.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+						<h3>Boss 2 PostCutscene</h3>
+						<p>
+							I was also given the task of implementing a cutscene that plays after the 2nd boss is defeated.  As having created the cutscene manager and cutscene system for this game, this was a straight forward task.  However,
+							as with all art implementation with 5-10 separate pieces, it definetely got tedious.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post5images/BossUI.mp4" type="video/mp4">
+								<source src="post5images/BossUI.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+
+
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+
+		<script>
+			(function () {
+				//If you want to include more images, add the link name and URL of the image in the array list below.
+				let images_list = [
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/294498VTE8U6K5W.png", "name": "294498VTE8U6K5W.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/81353_A06N4PM7N.png", "name": "81353_A06N4PM7N.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/82073XYSMRK8HM_.png", "name": "82073XYSMRK8HM_.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/745759F4E4V6F_N.png", "name": "745759F4E4V6F_N.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/7535672LZ3SQ7JN.png", "name": "7535672LZ3SQ7JN.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/76384CPPG5H11RG.png", "name": "76384CPPG5H11RG.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/77452BX1SEWFID1.png", "name": "77452BX1SEWFID1.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/78771UOY8_XU1SZ.png", "name": "78771UOY8_XU1SZ.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/80277PP56JI_FP2.png", "name": "80277PP56JI_FP2.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/8096675BCYHGV_2.png", "name": "8096675BCYHGV_2.png", "link": "" }
+				];
+
+				let slider_id = document.querySelector("#hcg-slider-1");
+
+				// append all images
+				let dots_div = "";
+				let images_div = "";
+				for (let i = 0; i < images_list.length; i++) {
+					// if no link without href="" tag
+					let href = (images_list[i].link == "" ? "" : ' href="' + images_list[i].link + '"');
+					images_div += '<a' + href + ' class="hcg-slides animated"' + (i === 0 ? ' style="display:block"' : '') + '>' +
+						'<span class="hcg-slide-number">' + (i + 1) + '/' + images_list.length + '</span>' +
+						'<img src="' + images_list[i].url + '" alt="' + images_list[i].name + '">' +
+						'<span class="hcg-slide-text">' + images_list[i].name + '</span>' +
+						'</a>';
+					dots_div += '<span class="hcg-slide-dot' + (i === 0 ? ' dot-active' : '') + '" data-id="' + i + '"></span>';
+				}
+				slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+				slider_id.querySelector(".hcg-slide-dot-control").innerHTML = dots_div;
+
+				let slide_index = 0;
+
+				let images = slider_id.querySelectorAll(".hcg-slides");
+				let dots = slider_id.querySelectorAll(".hcg-slide-dot");
+				let prev_button = slider_id.querySelector(".hcg-slide-prev");
+				let next_button = slider_id.querySelector(".hcg-slide-next");
+
+				function showSlides() {
+					if (slide_index > images.length - 1) {
+						slide_index = 0;
+					}
+					if (slide_index < 0) {
+						slide_index = images.length - 1;
+					}
+					for (let i = 0; i < images.length; i++) {
+						images[i].style.display = "none";
+						dots[i].classList.remove("dot-active");
+						if (i == slide_index) {
+							images[i].style.display = "block";
+							dots[i].classList.add("dot-active");
+						}
+					}
+				}
+
+				prev_button.addEventListener("click", function (event) {
+					event.preventDefault();
+					slide_index--;
+					showSlides();
+				}, false);
+
+				next_button.addEventListener("click", function (event) {
+					event.preventDefault();
+					slide_index++;
+					showSlides();
+				}, false);
+
+				function dot_click(event) {
+					slide_index = event.target.dataset.id;
+					showSlides();
+				}
+
+				for (let i = 0; i < dots.length; i++) {
+					dots[i].addEventListener("click", dot_click, false);
+				}
+			})();
+		</script>
+
+
+
+	</body>
+</html>
