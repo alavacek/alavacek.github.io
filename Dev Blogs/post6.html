@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	
+		<style>
+			#hcg-slider-1 .hcg-slide-container {
+				width: auto;
+				height: auto;
+			}
+
+			.hcg-slider {
+				text-align: center;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			.hcg-slide-container {
+				max-width: 100%;
+				display: inline-block;
+				position: relative;
+			}
+
+			.hcg-slides {
+				display: none;
+				text-align: center;
+				overflow: hidden;
+			}
+
+				.hcg-slides img {
+					max-width: 100%;
+					max-height: 100%;
+					display: inline-block;
+					border-radius: 5px;
+					border: solid 1px #a0a0a0;
+					vertical-align: middle;
+				}
+
+			.hcg-slide-text {
+				color: #ffffff;
+				font-size: 14px;
+				padding: 3px 5px;
+				position: absolute;
+				bottom: 0;
+				border-radius: 5px;
+				left: 50%;
+				text-align: center;
+				text-shadow: 0 0 2px #000;
+				background-color: rgba(255,255,255,0.30);
+				display: inline-block;
+				transform: translate(-50%, -5px);
+			}
+
+			.hcg-slide-prev, .hcg-slide-next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+				margin-top: -22px;
+				color: #fff;
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+				text-decoration: none;
+			}
+
+			.hcg-slide-next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			.hcg-slide-prev {
+				left: 0;
+				border-radius: 0 3px 3px 0;
+			}
+
+				.hcg-slide-prev:hover, .hcg-slide-next:hover {
+					background-color: #000c;
+				}
+
+			.hcg-slide-dot-control {
+				margin-top: 10px;
+				text-align: center;
+			}
+
+			.hcg-slide-dot {
+				cursor: pointer;
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+			}
+
+				.hcg-slide-dot.dot-active {
+					background-color: #717171;
+				}
+
+			.hcg-slide-number {
+				color: #ffffff;
+				font-size: 12px;
+				padding: 4px 7px;
+				position: absolute;
+				border-radius: 5px;
+				top: 5px;
+				left: 5px;
+				background-color: rgba(255,255,255,0.30);
+			}
+			/************CSS Animation***********/
+
+			.animated {
+				animation-name: fadeIn;
+				animation-duration: 1s;
+			}
+
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+
+			.fadeIn {
+				animation-name: fadeIn;
+			}
+		</style>
+
+
+
+	
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="../index.html" class="title">Home</a>
+			<nav>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="ProjectDriftIndex.html" class="active">Dev Blog</a></li>
+					
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<h1 class="major">3/19 - 4/2</h1>
+
+					<!--Time Summary-->
+					<div style="padding:0px 0px 40px 0px">
+						<h2>Time Summary: 13 hours</h2>
+						<div style="padding-left: 20px">
+							<h3 style="font-weight: normal"><strong>Studio Meetings:</strong> 4 hours</h3>
+							<h3 style="font-weight: normal"><strong>Tuning:</strong> 9 hours</h3>
+						</div>
+					</div>
+
+					<!--Topic-->
+					<h2>Debugging</h2>
+					<div style="padding-left: 20px">
+						<h3>Verticality and Stairs</h3>
+						<p>
+							Before this last stretch in our iteration process, the stairs of ships had a few issues reguarding their colliders.  One top of this,
+							the player would simple eslide up or down the stairs, and it would look awkward since there was no animation playing until the player
+							hit buttons to make them walk.  Therefore, I went in a tuned up the box colliders as well as took away play controls as they went up the 
+							stairs, then triggering the walk animation.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post6images/stairs.mp4" type="video/mp4">
+								<source src="post6images/stairs.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+						<h3>Encounter Fixes</h3>
+						<p>
+							There were a few issues with the encounter system, one being that the player could shoot while paused and the arena fire would spawn.  This was a fairly easy fix, as I 
+							simply needed to turn off all player abilities while the encounter was beginning, then turn it back on.
+							Another issue was that the 2nd and addition wave encounter enemies were not moving.  In addition to this I needed to add in spawn 
+							animations for these enemies.  Both were a fairly easy fix.  The enemies not moving was due to an issue in the enemy controller script where the 
+							first loop in their update function they were not able to remember which animator they had set to them.  I simply fixed this by saying if 
+							the animator was set to null, reset it, which fixed all of the issues.  Then the spawning animation was done in a similar fashion that the enemy death 
+							animation was.
+						</p>
+						<center>
+							<video width="960" height="720" controls>
+								<source src="post6images/2ndwave.mp4" type="video/mp4">
+								<source src="post6images/2ndwave.ogg" type="video/ogg">
+								Your browser does not support the video tag.
+							</video>
+						</center>
+
+
+						<h3>Boss 2</h3>
+						<p> The Boss 2 health bar and post animatic weren't showing up at the start of the week.  However, it was a farely
+							easy fix as I realized the designer may have missed a step in setting it up.  This was the case as they left the "Boss Health" serialized field 
+							empty as well the as the "Post Battle Cutscene". 
+						</p>
+							
+
+						<h3>Tile Tearing</h3>
+						<p>
+							There was a huge issue with tile tearing in the tutorial scene.  I probably searched online for 2-3 hours looking for a solution to this,
+							and found solutions such as using Cinemachine Pixel Perfect, creating a Sprite Atlas, playing around with grid snap.  Unfortunately, none of these 
+							solutions worked, and I determined it had to be a precision issue within the sprites themselves.  Therefore, I change the grid size of the tutorial 
+							from 1x1 to 0.995x0.995.  I wish I could have found a better solution, but with only a few days left until the code freeze,
+							I decided it was best to do what worked so I could focus my efforts on other tasks.
+						</p>
+
+
+					</div>
+
+					<h2>Concluding Thoughts</h2>
+					<div style="padding-left: 20px">
+						<p>
+							I'm so happy I got to take on this opportunity with WolvSoft Studios and am excited to take on the Programming Lead position
+							this summer for our next project!
+						</p>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+
+
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+
+		<script>
+			(function () {
+				//If you want to include more images, add the link name and URL of the image in the array list below.
+				let images_list = [
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/294498VTE8U6K5W.png", "name": "294498VTE8U6K5W.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/81353_A06N4PM7N.png", "name": "81353_A06N4PM7N.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/82073XYSMRK8HM_.png", "name": "82073XYSMRK8HM_.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/745759F4E4V6F_N.png", "name": "745759F4E4V6F_N.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/7535672LZ3SQ7JN.png", "name": "7535672LZ3SQ7JN.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/76384CPPG5H11RG.png", "name": "76384CPPG5H11RG.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/77452BX1SEWFID1.png", "name": "77452BX1SEWFID1.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/78771UOY8_XU1SZ.png", "name": "78771UOY8_XU1SZ.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/80277PP56JI_FP2.png", "name": "80277PP56JI_FP2.png", "link": "" },
+					{ "url": "https://html-generator.com/uploads/images/2022/09/26/8096675BCYHGV_2.png", "name": "8096675BCYHGV_2.png", "link": "" }
+				];
+
+				let slider_id = document.querySelector("#hcg-slider-1");
+
+				// append all images
+				let dots_div = "";
+				let images_div = "";
+				for (let i = 0; i < images_list.length; i++) {
+					// if no link without href="" tag
+					let href = (images_list[i].link == "" ? "" : ' href="' + images_list[i].link + '"');
+					images_div += '<a' + href + ' class="hcg-slides animated"' + (i === 0 ? ' style="display:block"' : '') + '>' +
+						'<span class="hcg-slide-number">' + (i + 1) + '/' + images_list.length + '</span>' +
+						'<img src="' + images_list[i].url + '" alt="' + images_list[i].name + '">' +
+						'<span class="hcg-slide-text">' + images_list[i].name + '</span>' +
+						'</a>';
+					dots_div += '<span class="hcg-slide-dot' + (i === 0 ? ' dot-active' : '') + '" data-id="' + i + '"></span>';
+				}
+				slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+				slider_id.querySelector(".hcg-slide-dot-control").innerHTML = dots_div;
+
+				let slide_index = 0;
+
+				let images = slider_id.querySelectorAll(".hcg-slides");
+				let dots = slider_id.querySelectorAll(".hcg-slide-dot");
+				let prev_button = slider_id.querySelector(".hcg-slide-prev");
+				let next_button = slider_id.querySelector(".hcg-slide-next");
+
+				function showSlides() {
+					if (slide_index > images.length - 1) {
+						slide_index = 0;
+					}
+					if (slide_index < 0) {
+						slide_index = images.length - 1;
+					}
+					for (let i = 0; i < images.length; i++) {
+						images[i].style.display = "none";
+						dots[i].classList.remove("dot-active");
+						if (i == slide_index) {
+							images[i].style.display = "block";
+							dots[i].classList.add("dot-active");
+						}
+					}
+				}
+
+				prev_button.addEventListener("click", function (event) {
+					event.preventDefault();
+					slide_index--;
+					showSlides();
+				}, false);
+
+				next_button.addEventListener("click", function (event) {
+					event.preventDefault();
+					slide_index++;
+					showSlides();
+				}, false);
+
+				function dot_click(event) {
+					slide_index = event.target.dataset.id;
+					showSlides();
+				}
+
+				for (let i = 0; i < dots.length; i++) {
+					dots[i].addEventListener("click", dot_click, false);
+				}
+			})();
+		</script>
+
+
+
+	</body>
+</html>
