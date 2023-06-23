@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
 
+
 /*
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -22,11 +23,30 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+
+/*colors*/
+:root {
+	--litegreen: #CCFFC4;
+	--litegreen2: A3F4A3;
+	--green: #83C760;
+	--darkgreen: #66B032;
+	--darkgreen2: #6CAF1F;
+	--darkgreen3: #4EA217;
+	--litepink: #FECDCD;
+	--litepink2: #FCBACB;
+	--pink: #FDA4BA;
+	--darkpink: #FC94AF;
+	--darkpink2: #FE7F9C;
+	--darkpink3: #F26B8A;
+	--white: #ffffff;
+}
+
 
 body {
 	line-height: 1;
@@ -71,6 +91,7 @@ input, select, textarea {
 	appearance: none;
 }
 
+
 /* Basic */
 
 	@-ms-viewport {
@@ -98,7 +119,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #312450;
+		background: var(--darkgreen3);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -115,7 +136,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		color: var(--litepink);
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -156,13 +177,18 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
+	/*
+		======================
+			    HEADERS
+		======================
+	*/
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffffff;
+			/*#ffffff;*/ color: var(--litepink);
 		}
 
 	strong, b {
-		color: #ffffff;
+		/*#ffffff;*/ color: var(--litepink);
 		font-weight: bold;
 	}
 
@@ -172,10 +198,11 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		color: var(--litepink);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		/*#ffffff;*/ color: var(--litepink);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -197,10 +224,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: -webkit-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: -ms-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: linear-gradient(to right, var(--pink), var(--darkpink));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1818,39 +1845,39 @@ input, select, textarea {
 
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: border-color 0.2s ease;
-		-webkit-transition: border-color 0.2s ease;
-		-ms-transition: border-color 0.2s ease;
-		transition: border-color 0.2s ease;
-		background-color: transparent;
-		border: solid 1px !important;
-		border-color: rgba(255, 255, 255, 0.15) !important;
-		border-radius: 3em;
-		color: #ffffff !important;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 0.6em;
-		font-weight: bold;
-		height: calc(4.75em + 2px);
-		letter-spacing: 0.25em;
-		line-height: 4.75em;
-		outline: 0;
-		padding: 0 3.75em;
-		position: relative;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: border-color 0.2s ease;
+	-webkit-transition: border-color 0.2s ease;
+	-ms-transition: border-color 0.2s ease;
+	transition: border-color 0.2s ease;
+	background-color: transparent;
+	border: solid 1px !important;
+	border-color: var(--litepink) !important;
+	border-radius: 3em;
+	color: var(--litepink) !important;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.6em;
+	font-weight: bold;
+	height: calc(4.75em + 2px);
+	letter-spacing: 0.25em;
+	line-height: 4.75em;
+	outline: 0;
+	padding: 0 3.75em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
 
 		input[type="submit"]:after,
 		input[type="reset"]:after,
@@ -1866,8 +1893,9 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
 			-ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
 			transition: opacity 0.2s ease, transform 0.2s ease;
-			background: #ffffff;
+			background: var(--white);
 			border-radius: 3em;
+			border-color: var(--white);
 			content: '';
 			height: 100%;
 			left: 0;
@@ -1909,13 +1937,19 @@ input, select, textarea {
 			font-size: 0.8em;
 		}
 
+
+		/*
+		======================
+		  BUTTON HOVER COLOR
+		======================
+		*/
 		input[type="submit"].primary,
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ffffff;
-			color: #312450 !important;
+			background-color: var(--white);
+			color: var(--white) !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -1940,12 +1974,17 @@ input, select, textarea {
 			pointer-events: none;
 		}
 
+		/*
+		======================
+		BUTTON BORDER COLOR
+		======================
+		*/
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: var(--white) !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -1960,12 +1999,17 @@ input, select, textarea {
 				transform: scale(1);
 			}
 
+			/*
+			======================
+					TBD
+			======================
+			*/
 			input[type="submit"]:hover:active,
 			input[type="reset"]:hover:active,
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				border-color: #ffffff !important;
+				border-color: var(--white) !important;
 			}
 
 				input[type="submit"]:hover:active:after,
@@ -2294,8 +2338,13 @@ input, select, textarea {
 
 		}
 
+		/*
+		======================
+				TBD
+		======================
+		*/
 	label {
-		color: #ffffff;
+		color: var(--darkgreen); 
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2334,13 +2383,18 @@ input, select, textarea {
 			box-shadow: none;
 		}
 
+		/*
+		======================
+				TBD
+		======================
+		*/
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #ffffff;
+			border-color: red;
 			box-shadow: 0 0 0 1px #ffffff;
 		}
 
@@ -2354,9 +2408,14 @@ input, select, textarea {
 		text-overflow: ellipsis;
 	}
 
+		/*
+		======================
+			TBD - neon red
+		======================
+		*/
 		select option {
-			color: #ffffff;
-			background: #312450;
+			color: #FF1818;
+			background: #FF1818;
 		}
 
 		select:focus::-ms-value {
@@ -2396,10 +2455,15 @@ input, select, textarea {
 		z-index: -1;
 	}
 
+		/*
+		======================
+			TBD - neon red
+		======================
+		*/
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.55);
+			color: #FF1818;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2440,18 +2504,23 @@ input, select, textarea {
 				width: 2.0625em;
 			}
 
+		/*
+		======================
+			TBD - checkbox?
+		======================
+		*/
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #ffffff;
-			border-color: #ffffff;
-			color: #b74e91;
+			background: #66B032;
+			border-color: #66B032;
+			color: #66B032;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #ffffff;
-			box-shadow: 0 0 0 1px #ffffff;
+			border-color: #66B032;
+			box-shadow: 0 0 0 1px #66B032;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2523,9 +2592,9 @@ input, select, textarea {
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: #ffffff;
+			background: var(--green) /*color icon outside background*/;
 			border-radius: 100%;
-			color: #312450;
+			color: #66B032;
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2540,23 +2609,28 @@ input, select, textarea {
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #493382;
+					color: red;
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #5052b5;
+					color: red;
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #3e4094;
+					color: red;
 				}
 
+				/*
+				======================
+				  Color Icon Inside
+				======================
+				*/
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: var(--pink);
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
+					color: var(--pink);
 				}
 
 /* Image */
@@ -2625,10 +2699,16 @@ input, select, textarea {
 			padding-left: 0.25em;
 		}
 
+	/*
+	======================
+		List Color
+	======================
+	*/
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
+		color: var(--litepink);
 	}
 
 		ul li {
@@ -2641,7 +2721,7 @@ input, select, textarea {
 		}
 
 			ul.alt li {
-				border-top: solid 1px rgba(255, 255, 255, 0.15);
+				border-top: solid 1px var(--litepink);
 				padding: 0.5em 0;
 			}
 
@@ -2867,7 +2947,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.35);
+		color: var(--litepink);
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -3022,7 +3102,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
+				background: var(--darkgreen3);
 				content: '';
 				display: block;
 				height: 100%;
@@ -3063,24 +3143,28 @@ input, select, textarea {
 				opacity: 1;
 			}
 
+		.spotlights > section:nth-child(1) {
+			background-color: var(--darkpink);
+		}
+
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.05);
+			background-color: var(--darkpink2);
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: var(--darkpink3);
 		}
 
 		.spotlights > section:nth-child(4) {
-			background-color: rgba(0, 0, 0, 0.15);
+			background-color: var(--darkpink);
 		}
 
 		.spotlights > section:nth-child(5) {
-			background-color: rgba(0, 0, 0, 0.2);
+			background-color: var(--darkpink2);
 		}
 
 		.spotlights > section:nth-child(6) {
-			background-color: rgba(0, 0, 0, 0.25);
+			background-color: var(--darkpink3);
 		}
 
 		.spotlights > section.inactive > .image:before,
@@ -3162,7 +3246,7 @@ input, select, textarea {
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.05);
+				background-color: var(--darkgreen);
 			}
 
 		table td {
@@ -3170,7 +3254,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: #ffffff;
+			color: var(--darkgreen);
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3247,33 +3331,33 @@ input, select, textarea {
 
 			}
 
-		.wrapper.alt {
-			background-color: #261c3e;
-		}
+			.wrapper.alt {
+				background-color: var(--green);
+			}
 
-		.wrapper.style1 {
-			background-color: #5e42a6;
-		}
+	.wrapper.style1 {
+		background-color: var(--darkgreen);
+	}
 
-		.wrapper.style1-alt {
-			background-color: #493382;
-		}
+	.wrapper.style1-alt {
+		background-color: var(--darkgreen3);
+	}
 
-		.wrapper.style2 {
-			background-color: #5052b5;
-		}
+	.wrapper.style2 {
+		background-color: var(--darkgreen2);
+	}
 
-		.wrapper.style2-alt {
-			background-color: #3e4094;
-		}
+	.wrapper.style2-alt {
+		background-color: var(--darkpink2);
+	}
 
-		.wrapper.style3 {
-			background-color: #b74e91;
-		}
+	.wrapper.style3 {
+		background-color: var(--darkgreen);
+	}
 
-		.wrapper.style3-alt {
-			background-color: #953d75;
-		}
+	.wrapper.style3-alt {
+		background-color: var(--darkgreen2);
+	}
 
 		.wrapper.fullscreen {
 			display: -moz-flex;
@@ -3382,14 +3466,14 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: var(--darkgreen3);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: var(--litepink);
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3430,7 +3514,7 @@ input, select, textarea {
 					}
 
 						#header > nav > ul > li a:hover {
-							color: rgba(255, 255, 255, 0.55);
+							color: #ffffff;
 						}
 
 						#header > nav > ul > li a.active {
@@ -3532,11 +3616,11 @@ input, select, textarea {
 		margin: 0 auto;
 	}
 
-/* Sidebar */
+	/* Sidebar */
 
 	#sidebar {
-		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		padding: 2.5em 2.5em 0.5em 2.5em;
+		background: var(--darkgreen3);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3749,7 +3833,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: var(--litepink);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3773,14 +3857,14 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: var(--darkgreen3);
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, var(--litepink), var(--darkpink3));
+				background-image: -webkit-linear-gradient(to right, var(--litepink), var(--darkpink3));
+				background-image: -ms-linear-gradient(to right, var(--litepink), var(--darkpink3));
+				background-image: linear-gradient(to right, var(--litepink), var(--darkpink3));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3791,7 +3875,7 @@ input, select, textarea {
 			#sidebar nav a:hover {
 				color: rgba(255, 255, 255, 0.55);
 			}
-
+			/*sidebar selected*/
 			#sidebar nav a.active {
 				color: #ffffff;
 			}
