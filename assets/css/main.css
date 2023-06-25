@@ -3373,6 +3373,7 @@ button,
 			-ms-justify-content: center;
 			justify-content: center;
 			min-height: 100vh;
+			background-color: var(--darkpink3);
 		}
 
 			body.is-ie .wrapper.fullscreen {
