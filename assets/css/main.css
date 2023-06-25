@@ -34,8 +34,8 @@ footer, header, hgroup, menu, nav, section {
 :root {
 	--litegreen: #CCFFC4;
 	--litegreen2: A3F4A3;
-	--green: #83C760;
-	--darkgreen: #66B032;
+	--green: #83C760; 
+	--darkgreen: #66B032; 
 	--darkgreen2: #6CAF1F;
 	--darkgreen3: #4EA217;
 	--litepink: #FECDCD;
@@ -2592,7 +2592,7 @@ button,
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: var(--green) /*color icon outside background*/;
+			background: var(--litepink) /*color icon outside background*/;
 			border-radius: 100%;
 			color: #66B032;
 			text-align: center;
@@ -2604,20 +2604,20 @@ button,
 				font-size: 1.25em;
 			}
 
-				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
-				}
+			.wrapper.style1 .icon.major:before {
+				color: var(--darkpink2);
+			}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: red;
+					color: var(--darkpink2);
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: red;
+					color: var(--darkpink2)
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: red;
+					color: var(--darkpink2);
 				}
 
 				/*
@@ -3340,11 +3340,11 @@ button,
 	}
 
 	.wrapper.style1-alt {
-		background-color: var(--darkgreen3);
+		background-color: var(--darkgreen);
 	}
 
 	.wrapper.style2 {
-		background-color: var(--darkgreen2);
+		background-color: var(--darkpink3);
 	}
 
 	.wrapper.style2-alt {
@@ -3466,7 +3466,7 @@ button,
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: var(--darkgreen3);
+		background-color: var(--darkgreen);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3505,7 +3505,7 @@ button,
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: rgba(255, 255, 255, 0.35);
+						color: var(--pink);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3514,11 +3514,11 @@ button,
 					}
 
 						#header > nav > ul > li a:hover {
-							color: #ffffff;
+							color: var(--litepink);
 						}
 
 						#header > nav > ul > li a.active {
-							color: #ffffff;
+							color: var(--litepink2);
 						}
 
 		@media screen and (max-width: 736px) {
@@ -3620,7 +3620,7 @@ button,
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em;
-		background: var(--darkgreen3);
+		background: var(--darkgreen);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3833,7 +3833,7 @@ button,
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: var(--litepink);
+			color: var(--pink);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3857,7 +3857,7 @@ button,
 			}
 
 			#sidebar nav a:before {
-				background: var(--darkgreen3);
+				background: var(--darkgreen);
 			}
 
 			#sidebar nav a:after {
@@ -3873,11 +3873,11 @@ button,
 			}
 
 			#sidebar nav a:hover {
-				color: rgba(255, 255, 255, 0.55);
+				color: var(--litepink2);
 			}
 			/*sidebar selected*/
 			#sidebar nav a.active {
-				color: #ffffff;
+				color: var(--litepink);
 			}
 
 				#sidebar nav a.active:after {
