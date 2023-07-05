@@ -34,16 +34,16 @@ footer, header, hgroup, menu, nav, section {
 :root {
 	--litegreen: #CCFFC4;
 	--litegreen2: A3F4A3;
-	--green: #83C760; 
-	--darkgreen: #66B032; 
+	--green: #66B032;
+	--darkgreen: #83C760;
 	--darkgreen2: #6CAF1F;
 	--darkgreen3: #4EA217;
-	--litepink: #FECDCD;
-	--litepink2: #FCBACB;
-	--pink: #FDA4BA;
-	--darkpink: #FC94AF;
-	--darkpink2: #FE7F9C;
-	--darkpink3: #F26B8A;
+	--litepink: #ffffff;
+	--litepink2: #FDBFCC;
+	--pink: #FDB0BF;
+	--darkpink: #FDA0B2;
+	--darkpink2: #FC90A5;
+	--darkpink3: #FC8099;
 	--white: #ffffff;
 }
 
