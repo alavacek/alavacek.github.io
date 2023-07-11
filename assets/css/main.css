@@ -3127,7 +3127,7 @@ button,
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 50em;
+			width: 100%;
 			-ms-flex: 1;
 		}
 
