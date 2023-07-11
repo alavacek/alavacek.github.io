@@ -119,7 +119,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: var(--darkgreen3);
+		background: var(--darkpink2);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
