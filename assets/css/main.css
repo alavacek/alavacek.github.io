@@ -38,6 +38,7 @@ footer, header, hgroup, menu, nav, section {
 	--darkgreen: #83C760;
 	--darkgreen2: #6CAF1F;
 	--darkgreen3: #4EA217;
+	--darkgreen4: #000a00;
 	--litepink: #fff0f0;
 	--litepink2: #FDBFCC;
 	--pink: #FDB0BF;
@@ -2637,7 +2638,7 @@ button,
 
 	.image {
 		border-radius: 0.25em;
-		border: 0;
+		border: 10px solid var(--litepink);
 		display: inline-block;
 		position: relative;
 	}
@@ -4004,3 +4005,5 @@ button,
 			}
 
 		}
+
+
