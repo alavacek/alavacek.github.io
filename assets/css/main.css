@@ -26,6 +26,10 @@ section, summary, time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+#more {
+	display: none;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
@@ -3178,6 +3182,14 @@ button,
 
 		.spotlights > section:nth-child(9) {
 			background-color: var(--darkpink3);
+		}
+
+		.spotlights > section:nth-child(10) {
+			background-color: var(--darkpink);
+		}
+
+		.spotlights > section:nth-child(11) {
+			background-color: var(--darkpink2);
 		}
 
 		.spotlights > section.inactive > .image:before,
