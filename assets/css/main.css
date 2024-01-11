@@ -36,19 +36,30 @@ footer, header, hgroup, menu, nav, section {
 
 /*colors*/
 :root {
-	--litegreen: #7d8b67;
-	--litegreen2: #7d8b67;
+	/*	
+		BROWN
 	--green: #55#40292c373b;
 	--darkgreen: #40292c;
 	--darkgreen2: #40292c;
 	--darkgreen3: #40292c;
 	--darkgreen4: #40292c;
-	--litepink: #f2d8e4;
-	--litepink2: #e3bbbd;
+	--pink: #f2d8e4;
+	--pink: #e3bbbd;
 	--darkpink: #996666;
 	--darkpink2: #6b454a;
 	--darkpink3: #55373b;
-	--white: #ffffff;
+	--white: #ffffff;*/
+
+
+	--green: #1f2e26;
+	--darkgreen: #1f2e26;
+	--darkgreen2: #1f2e26;
+	--darkgreen3: #1f2e26;
+	--pink: #A3B18A;
+	--darkpink: #588157;
+	--darkpink2: #3A5A40;
+	--darkpink3: #344E41;
+	--white: #DAD7CD;
 }
 
 
@@ -140,7 +151,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: var(--litepink2);
+		color: var(--pink);
 		font-family: Georgia, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -188,11 +199,11 @@ input, select, textarea {
 	*/
 		a:hover {
 			border-bottom-color: transparent;
-			/*#ffffff;*/ color: var(--litepink);
+			/*#ffffff;*/ color: var(--white);
 		}
 
 	strong, b {
-		/*#ffffff;*/ color: var(--litepink2);
+		/*#ffffff;*/ color: var(--pink);
 		font-weight: bold;
 	}
 
@@ -202,11 +213,11 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-		color: var(--litepink2);
+		color: var(--pink);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		/*#ffffff;*/ color: var(--litepink2);
+		/*#ffffff;*/ color: var(--pink);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -228,10 +239,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, var(--litepink2), var(--darkpink));
-				background-image: -webkit-linear-gradient(to right, var(--litepink2), var(--darkpink));
-				background-image: -ms-linear-gradient(to right, var(--litepink2), var(--darkpink));
-				background-image: linear-gradient(to right, var(--litepink2), var(--darkpink));
+				background-image: -moz-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: -webkit-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: -ms-linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: linear-gradient(to right, var(--pink), var(--darkpink));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1864,9 +1875,9 @@ button,
 	transition: border-color 0.2s ease;
 	background-color: transparent;
 	border: solid 1px !important;
-	border-color: var(--litepink2) !important;
+	border-color: var(--pink) !important;
 	border-radius: 3em;
-	color: var(--litepink2) !important;
+	color: var(--pink) !important;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 0.6em;
@@ -1897,9 +1908,9 @@ button,
 		-webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
 		-ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
 		transition: opacity 0.2s ease, transform 0.2s ease;
-		background: var(--litepink);
+		background: var(--pink);
 		border-radius: 3em;
-		border-color: var(--litepink);
+		border-color: var(--pink);
 		content: '';
 		height: 100%;
 		left: 0;
@@ -1952,8 +1963,8 @@ button,
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: var(--litepink);
-			color: var(--litepink) !important;
+			background-color: var(--white);
+			color: var(--white) !important;
 		}
 
 			input[type="submit"].primary:after,
@@ -1988,7 +1999,7 @@ button,
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: var(--litepink) !important;
+			border-color: var(--white) !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -2013,7 +2024,7 @@ button,
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				border-color: var(--litepink) !important;
+				border-color: var(--white) !important;
 			}
 
 				input[type="submit"]:hover:active:after,
@@ -2596,7 +2607,7 @@ button,
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: var(--litepink2) /*color icon outside background*/;
+			background: var(--pink) /*color icon outside background*/;
 			border-radius: 100%;
 			color: #66B032;
 			text-align: center;
@@ -2630,18 +2641,18 @@ button,
 				======================
 				*/
 				.wrapper.style3 .icon.major:before {
-					color: var(--litepink2);
+					color: var(--pink);
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: var(--litepink2);
+					color: var(--pink);
 				}
 
 /* Image */
 
 	.image {
 		border-radius: 0.25em;
-		border: 10px solid var(--litepink);
+		border: 10px solid var(--pink);
 		display: inline-block;
 		position: relative;
 	}
@@ -2712,7 +2723,7 @@ button,
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
-		color: var(--litepink2);
+		color: var(--pink);
 	}
 
 		ul li {
@@ -2725,7 +2736,7 @@ button,
 		}
 
 			ul.alt li {
-				border-top: solid 1px var(--litepink2);
+				border-top: solid 1px var(--pink);
 				padding: 0.5em 0;
 			}
 
@@ -2951,7 +2962,7 @@ button,
 	}
 
 	header p {
-		color: var(--litepink);
+		color: var(--pink);
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -3514,7 +3525,7 @@ button,
 
 		#header > .title {
 			border: 0;
-			color: var(--litepink);
+			color: var(--pink);
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3546,7 +3557,7 @@ button,
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: var(--litepink2);
+						color: var(--pink);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3555,11 +3566,11 @@ button,
 					}
 
 						#header > nav > ul > li a:hover {
-							color: var(--litepink);
+							color: var(--white);
 						}
 
 						#header > nav > ul > li a.active {
-							color: var(--litepink2);
+							color: var(--white);
 						}
 
 		@media screen and (max-width: 736px) {
@@ -3874,7 +3885,7 @@ button,
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: var(--litepink2);
+			color: var(--pink);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3902,10 +3913,10 @@ button,
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, var(--litepink), var(--darkpink3));
-				background-image: -webkit-linear-gradient(to right, var(--litepink), var(--darkpink3));
-				background-image: -ms-linear-gradient(to right, var(--litepink), var(--darkpink3));
-				background-image: linear-gradient(to right, var(--litepink), var(--darkpink3));
+				background-image: -moz-linear-gradient(to right, var(--pink), var(--darkpink3));
+				background-image: -webkit-linear-gradient(to right, var(--pink), var(--darkpink3));
+				background-image: -ms-linear-gradient(to right, var(--pink), var(--darkpink3));
+				background-image: linear-gradient(to right, var(--pink), var(--darkpink3));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3914,11 +3925,11 @@ button,
 			}
 
 			#sidebar nav a:hover {
-				color: var(--litepink);
+				color: var(--white);
 			}
 			/*sidebar selected*/
 			#sidebar nav a.active {
-				color: var(--litepink);
+				color: var(--white);
 			}
 
 				#sidebar nav a.active:after {
