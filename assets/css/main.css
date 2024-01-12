@@ -38,26 +38,19 @@ footer, header, hgroup, menu, nav, section {
 :root {
 	/*	
 		BROWN
-	--green: #55#40292c373b;
-	--darkgreen: #40292c;
-	--darkgreen2: #40292c;
-	--darkgreen3: #40292c;
-	--darkgreen4: #40292c;
-	--pink: #e3bbbd;
-	--darkpink: #996666;
-	--darkpink2: #6b454a;
-	--darkpink3: #55373b;
+	--secondarycolor: #40292c;
+	--maincolor: #e3bbbd;
+	--wheel1: #996666;
+	--wheel2: #6b454a;
+	--wheel3: #55373b;
 	--white: #f2d8e4;*/
 
 
-	--green: #1f2e26;
-	--darkgreen: #1f2e26;
-	--darkgreen2: #1f2e26;
-	--darkgreen3: #1f2e26;
-	--pink: #A3B18A;
-	--darkpink: #588157;
-	--darkpink2: #3A5A40;
-	--darkpink3: #344E41;
+	--secondarycolor: #1f2e26;
+	--maincolor: #A3B18A;
+	--wheel1: #588157;
+	--wheel2: #3A5A40;
+	--wheel3: #344E41;
 	--white: #DAD7CD;
 }
 
@@ -133,7 +126,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: var(--darkpink2);
+		background: var(--wheel2);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -150,7 +143,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: var(--pink);
+		color: var(--maincolor);
 		font-family: Georgia, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -202,7 +195,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		/*#ffffff;*/ color: var(--pink);
+		/*#ffffff;*/ color: var(--maincolor);
 		font-weight: bold;
 	}
 
@@ -212,11 +205,11 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-		color: var(--pink);
+		color: var(--maincolor);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		/*#ffffff;*/ color: var(--pink);
+		/*#ffffff;*/ color: var(--maincolor);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -238,10 +231,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, var(--pink), var(--darkpink));
-				background-image: -webkit-linear-gradient(to right, var(--pink), var(--darkpink));
-				background-image: -ms-linear-gradient(to right, var(--pink), var(--darkpink));
-				background-image: linear-gradient(to right, var(--pink), var(--darkpink));
+				background-image: -moz-linear-gradient(to right, var(--maincolor), var(--wheel1));
+				background-image: -webkit-linear-gradient(to right, var(--maincolor), var(--wheel1));
+				background-image: -ms-linear-gradient(to right, var(--maincolor), var(--wheel1));
+				background-image: linear-gradient(to right, var(--maincolor), var(--wheel1));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1874,9 +1867,9 @@ button,
 	transition: border-color 0.2s ease;
 	background-color: transparent;
 	border: solid 1px !important;
-	border-color: var(--pink) !important;
+	border-color: var(--maincolor) !important;
 	border-radius: 3em;
-	color: var(--pink) !important;
+	color: var(--maincolor) !important;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 0.6em;
@@ -1907,9 +1900,9 @@ button,
 		-webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
 		-ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
 		transition: opacity 0.2s ease, transform 0.2s ease;
-		background: var(--pink);
+		background: var(--maincolor);
 		border-radius: 3em;
-		border-color: var(--pink);
+		border-color: var(--maincolor);
 		content: '';
 		height: 100%;
 		left: 0;
@@ -2358,7 +2351,7 @@ button,
 		======================
 		*/
 	label {
-		color: var(--darkgreen); 
+		color: var(--secondarycolor); 
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2606,7 +2599,7 @@ button,
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: var(--pink) /*color icon outside background*/;
+			background: var(--maincolor) /*color icon outside background*/;
 			border-radius: 100%;
 			color: #66B032;
 			text-align: center;
@@ -2619,19 +2612,19 @@ button,
 			}
 
 			.wrapper.style1 .icon.major:before {
-				color: var(--darkpink2);
+				color: var(--wheel2);
 			}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: var(--darkpink2);
+					color: var(--wheel2);
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: var(--darkpink2)
+					color: var(--wheel2)
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: var(--darkpink2);
+					color: var(--wheel2);
 				}
 
 				/*
@@ -2640,18 +2633,18 @@ button,
 				======================
 				*/
 				.wrapper.style3 .icon.major:before {
-					color: var(--pink);
+					color: var(--maincolor);
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: var(--pink);
+					color: var(--maincolor);
 				}
 
 /* Image */
 
 	.image {
 		border-radius: 0.25em;
-		border: 10px solid var(--pink);
+		border: 10px solid var(--maincolor);
 		display: inline-block;
 		position: relative;
 	}
@@ -2722,7 +2715,7 @@ button,
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
-		color: var(--pink);
+		color: var(--maincolor);
 	}
 
 		ul li {
@@ -2735,7 +2728,7 @@ button,
 		}
 
 			ul.alt li {
-				border-top: solid 1px var(--pink);
+				border-top: solid 1px var(--maincolor);
 				padding: 0.5em 0;
 			}
 
@@ -2961,7 +2954,7 @@ button,
 	}
 
 	header p {
-		color: var(--pink);
+		color: var(--maincolor);
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -3116,7 +3109,7 @@ button,
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: var(--darkgreen3);
+				background: var(--secondarycolor);
 				content: '';
 				display: block;
 				height: 100%;
@@ -3158,63 +3151,63 @@ button,
 			}
 
 		.spotlights > section:nth-child(1) {
-			background-color: var(--darkpink);
+			background-color: var(--wheel1);
 		}
 
 		.spotlights > section:nth-child(2) {
-			background-color: var(--darkpink2);
+			background-color: var(--wheel2);
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 		.spotlights > section:nth-child(4) {
-			background-color: var(--darkpink);
+			background-color: var(--wheel1);
 		}
 
 		.spotlights > section:nth-child(5) {
-			background-color: var(--darkpink2);
+			background-color: var(--wheel2);
 		}
 
 		.spotlights > section:nth-child(6) {
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 		.spotlights > section:nth-child(7) {
-			background-color: var(--darkpink);
+			background-color: var(--wheel1);
 		}
 
 		.spotlights > section:nth-child(8) {
-			background-color: var(--darkpink2);
+			background-color: var(--wheel2);
 		}
 
 		.spotlights > section:nth-child(9) {
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 		.spotlights > section:nth-child(10) {
-			background-color: var(--darkpink);
+			background-color: var(--wheel1);
 		}
 
 		.spotlights > section:nth-child(11) {
-			background-color: var(--darkpink2);
+			background-color: var(--wheel2);
 		}
 
 		.spotlights > section:nth-child(12) {
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 		.spotlights > section:nth-child(13) {
-			background-color: var(--darkpink);
+			background-color: var(--wheel1);
 		}
 
 		.spotlights > section:nth-child(14) {
-			background-color: var(--darkpink2);
+			background-color: var(--wheel2);
 		}
 
 		.spotlights > section:nth-child(15) {
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 		.spotlights > section.inactive > .image:before,
@@ -3296,7 +3289,7 @@ button,
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: var(--darkgreen);
+				background-color: var(--secondarycolor);
 			}
 
 		table td {
@@ -3304,7 +3297,7 @@ button,
 		}
 
 		table th {
-			color: var(--darkgreen);
+			color: var(--secondarycolor);
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3382,31 +3375,31 @@ button,
 			}
 
 			.wrapper.alt {
-				background-color: var(--green);
+				background-color: var(--secondarycolor);
 			}
 
 	.wrapper.style1 {
-		background-color: var(--darkgreen);
+		background-color: var(--secondarycolor);
 	}
 
 	.wrapper.style1-alt {
-		background-color: var(--darkgreen);
+		background-color: var(--secondarycolor);
 	}
 
 	.wrapper.style2 {
-		background-color: var(--darkpink3);
+		background-color: var(--wheel3);
 	}
 
 	.wrapper.style2-alt {
-		background-color: var(--darkpink2);
+		background-color: var(--wheel2);
 	}
 
 	.wrapper.style3 {
-		background-color: var(--darkgreen);
+		background-color: var(--secondarycolor);
 	}
 
 	.wrapper.style3-alt {
-		background-color: var(--darkgreen2);
+		background-color: var(--secondarycolor);
 	}
 
 		.wrapper.fullscreen {
@@ -3423,7 +3416,7 @@ button,
 			-ms-justify-content: center;
 			justify-content: center;
 			min-height: 100vh;
-			background-color: var(--darkpink3);
+			background-color: var(--wheel3);
 		}
 
 			body.is-ie .wrapper.fullscreen {
@@ -3517,14 +3510,14 @@ button,
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: var(--darkgreen);
+		background-color: var(--secondarycolor);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: var(--pink);
+			color: var(--maincolor);
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3556,7 +3549,7 @@ button,
 
 					#header > nav > ul > li a {
 						border: 0;
-						color: var(--pink);
+						color: var(--maincolor);
 						display: inline-block;
 						font-size: 0.6em;
 						font-weight: bold;
@@ -3671,7 +3664,7 @@ button,
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em;
-		background: var(--darkgreen);
+		background: var(--secondarycolor);
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3884,7 +3877,7 @@ button,
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: var(--pink);
+			color: var(--maincolor);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3908,14 +3901,14 @@ button,
 			}
 
 			#sidebar nav a:before {
-				background: var(--darkgreen);
+				background: var(--secondarycolor);
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, var(--pink), var(--darkpink3));
-				background-image: -webkit-linear-gradient(to right, var(--pink), var(--darkpink3));
-				background-image: -ms-linear-gradient(to right, var(--pink), var(--darkpink3));
-				background-image: linear-gradient(to right, var(--pink), var(--darkpink3));
+				background-image: -moz-linear-gradient(to right, var(--maincolor), var(--wheel3));
+				background-image: -webkit-linear-gradient(to right, var(--maincolor), var(--wheel3));
+				background-image: -ms-linear-gradient(to right, var(--maincolor), var(--wheel3));
+				background-image: linear-gradient(to right, var(--maincolor), var(--wheel3));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
