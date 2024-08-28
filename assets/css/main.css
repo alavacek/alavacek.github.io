@@ -3134,7 +3134,7 @@ button,
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 100%;
+			width: 70%;
 			-ms-flex: 1;
 		}
 
@@ -3150,65 +3150,141 @@ button,
 				opacity: 1;
 			}
 
-		.spotlights > section:nth-child(1) {
+		.spotlights > section:nth-child(3n + 1) {
 			background-color: var(--wheel1);
 		}
 
-		.spotlights > section:nth-child(2) {
+		.spotlights > section:nth-child(3n + 2) {
 			background-color: var(--wheel2);
 		}
 
-		.spotlights > section:nth-child(3) {
+		.spotlights > section:nth-child(3n) {
 			background-color: var(--wheel3);
 		}
 
-		.spotlights > section:nth-child(4) {
-			background-color: var(--wheel1);
+		.spotlights > section .sectionImages {
+			width: 30%;
+			background: var(--maincolor);
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
 		}
 
-		.spotlights > section:nth-child(5) {
-			background-color: var(--wheel2);
+		.spotlights > section .sectionImages img {
+			width: 100%;
+			height: auto; /* Maintain aspect ratio */
+			object-fit: cover;
 		}
 
-		.spotlights > section:nth-child(6) {
-			background-color: var(--wheel3);
+		.crossfade-container {
+			position: relative;
+			width: 100%; /* Adjust based on your container size */
+			display: flex;
+			overflow: hidden;
+			align-items: center; /* Center content vertically */
+			justify-content: center;
+			height: auto; /* Allow height to be defined by the first image */
 		}
 
-		.spotlights > section:nth-child(7) {
-			background-color: var(--wheel1);
+		/*3 IMAGE FADE */
+		.spotlights > section .fade-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%; /* Match the height of the container */
+			object-fit: cover; /* Ensure all images fill the container without distorting aspect ratio */
+			opacity: 0;
+			animation: fadeAnimation 12s infinite;
 		}
 
-		.spotlights > section:nth-child(8) {
-			background-color: var(--wheel2);
+		.crossfade-container .fade-image:first-child {
+			position: relative;
+			z-index: 2; /* Ensure the first image dictates the container's height */
 		}
 
-		.spotlights > section:nth-child(9) {
-			background-color: var(--wheel3);
+		.crossfade-container .fade-image:nth-child(1) {
+			animation-delay: 0s;
 		}
 
-		.spotlights > section:nth-child(10) {
-			background-color: var(--wheel1);
+		.crossfade-container .fade-image:nth-child(2) {
+			animation-delay: 4s;
 		}
 
-		.spotlights > section:nth-child(11) {
-			background-color: var(--wheel2);
+		.crossfade-container .fade-image:nth-child(3) {
+			animation-delay: 8s;
 		}
 
-		.spotlights > section:nth-child(12) {
-			background-color: var(--wheel3);
+		@keyframes fadeAnimation {
+			0% {
+				opacity: 0; /* All images invisible at the start */
+			}
+
+			33.33% {
+				opacity: 1; /* First image fully visible */
+			}
+
+			66.67% {
+				opacity: 0; /* Fade out the first image */
+			}
+
+			100% {
+				opacity: 0; /* End with all images invisible */
+			}
+		}
+		/*3 IMAGE FADE END*/
+
+		/*2 IMAGE FADE */
+		.spotlights > section .fade-image2 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0;
+			animation: crossfade 10s infinite;
 		}
 
-		.spotlights > section:nth-child(13) {
-			background-color: var(--wheel1);
+		.crossfade-container .fade-image2:first-child {
+			position: relative;
+			z-index: 2; /* Ensure the first image dictates the container's height */
 		}
 
-		.spotlights > section:nth-child(14) {
-			background-color: var(--wheel2);
+		.crossfade-container .fade-image2:nth-child(1) {
+			animation-delay: 0s;
 		}
 
-		.spotlights > section:nth-child(15) {
-			background-color: var(--wheel3);
+		.crossfade-container .fade-image2:nth-child(2) {
+			animation-delay: 5s;
 		}
+
+		@keyframes crossfade {
+			0% {
+				opacity: 0;
+			}
+
+			16.67% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			66.67% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 0;
+			}
+		}
+		/*2 IMAGE FADE END*/
 
 		.spotlights > section.inactive > .image:before,
 		body.is-preload .spotlights > section > .image:before {
@@ -3235,13 +3311,13 @@ button,
 		@media screen and (max-width: 980px) {
 
 			.spotlights > section {
-				display: block;
+				display: flex; /* Use flexbox to keep elements side by side */
 			}
 
-				.spotlights > section > .image {
+/*				.spotlights > section > .image {
 					width: 100%;
 					height: 50vh;
-				}
+				}*/
 
 				.spotlights > section > .content {
 					width: 100%;
@@ -3259,15 +3335,25 @@ button,
 
 		@media screen and (max-width: 736px) {
 
-			.spotlights > section > .image {
+/*			.spotlights > section > .image {
 				height: 50vh;
 				min-height: 15em;
-			}
+			}*/
 
 			.spotlights > section > .content {
 				padding: 3em 2em 1em 2em ;
 			}
+		}
 
+		@media screen and (max-width: 480px) {
+			.spotlights > section .sectionImages {
+				display: none; /* Hide the image section on small screens */
+			}
+
+			.spotlights > section > .content {
+				width: 100%; /* Ensure the content takes up the full width */
+				padding: 2em 1em; /* Adjust padding for better fit */
+			}
 		}
 
 /* Table */
@@ -3939,6 +4025,44 @@ button,
 			transform: translateY(2em);
 			opacity: 0;
 		}
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;
+			gap: 8px; /* Space between columns */
+		}
+
+		/* Create columns that adapt to different screen sizes */
+		.column {
+			flex: 25%;
+			padding: 0 4px;
+		}
+
+			/* Adjust column width and height based on content */
+			.column img {
+				margin-top: 8px;
+				vertical-align: middle;
+				width: 100%;
+				object-fit: cover; /* Ensure images fill the container */
+			}
+
+		/* Responsive layout - two columns instead of four */
+		@media screen and (max-width: 800px) {
+			.column {
+				flex: 50%;
+				max-width: 50%;
+			}
+		}
+
+		/* Responsive layout - stack columns on smaller screens */
+		@media screen and (max-width: 600px) {
+			.column {
+				flex: 100%;
+				max-width: 100%;
+			}
+		}
+
 
 		@media screen and (max-width: 1280px) {
 
