@@ -430,6 +430,10 @@ input, select, textarea {
 			margin-left: 25%;
 		}
 
+		.row > .col-35 {
+			width: 32.9%;
+		}
+
 		.row > .col-4 {
 			width: 33.33333%;
 		}
