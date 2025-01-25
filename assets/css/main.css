@@ -4176,28 +4176,26 @@ button,
 		}
 
 
-/* Container holding the image and the text */
-.main-title-image-contianer {
+.main-title-image-container {
 	position: relative;
 	display: flex;
 	text-align: center;
-	background-color: white;
 	align-content: center;
-	height: 65vh;
-	margin-left: 8%;
-	margin-right: 8%;
+	height: 90vh; /* Adjust this if needed */
+	margin-left: 3%;
+	margin-right: 3%;
+	overflow: hidden;
 }
 
-.main-title-image-contianer-centered-text {
+.main-title-image-container-centered-text {
 	position: absolute;
-	z-index: 10; /* Ensure it's above images */
+	z-index: 10;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -60%);
 	color: var(--maincolor);
-	/*font-size: 2.75em;*/ /* Adjust as needed */
 	text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-	pointer-events: none; /* Prevent text from interfering with clicks on images */
+	pointer-events: none;
 	background: var(--secondarycolor);
 	line-height: 1px;
 	padding-left: 8%;
@@ -4205,4 +4203,62 @@ button,
 	display: block;
 }
 
+.main-title-image-container .crossfade-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
 
+.main-title-image-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.main-title-image-container .fade-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	animation: crossfade3 9s infinite;
+}
+
+	.main-title-image-container .fade-image:nth-child(1) {
+		animation-delay: 0s;
+	}
+
+	.main-title-image-container .fade-image:nth-child(2) {
+		animation-delay: 3s;
+	}
+
+	.main-title-image-container .fade-image:nth-child(3) {
+		animation-delay: 6s;
+	}
+
+@keyframes crossfade3 {
+	0% {
+		opacity: 0;
+	}
+
+	33.33% {
+		opacity: 1;
+	}
+
+	66.67% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.additional-info-page-content {
+	padding: 3% 10% 3% 10%;
+}
