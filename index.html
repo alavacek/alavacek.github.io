@@ -163,8 +163,6 @@
 										<li><a href="https://kyriestudios.com/" class="button">Kyrie Studios</a></li>
 									</ul>
 
-
-
 								</div>
 
 							</div>
@@ -762,24 +760,6 @@
 					// Change the text on button
 					// to 'Show Less'
 					buttonText.innerHTML = "Show Less";
-
-                    // image heighhts inside of crossfade-container
-                    const crossfadeContainers = document.querySelectorAll('.crossfade-container');
-
-                    crossfadeContainers.forEach(container => {
-                        // Get the first image inside the container
-                        const firstImage = container.querySelector('img:first-child');
-
-                        // When the image is loaded, set the container height
-                        firstImage.onload = function () {
-                            container.style.height = firstImage.clientHeight + 'px';
-                        };
-
-                        // If the image is already loaded, set the height immediately
-                        if (firstImage.complete) {
-                            container.style.height = firstImage.clientHeight + 'px';
-                        }
-                    });
 				}
 			}
 		</script>

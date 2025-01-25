@@ -3178,7 +3178,7 @@ button,
 			box-sizing: border-box;
 		}
 
-		.spotlights > section .sectionImages img {
+		.sectionImages img {
 			width: 100%;
 			height: auto; /* Maintain aspect ratio */
 			object-fit: cover;
@@ -3195,7 +3195,7 @@ button,
 		}
 
 		/*3 IMAGE FADE */
-		.spotlights > section .fade-image {
+		.fade-image {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -3243,7 +3243,7 @@ button,
 		/*3 IMAGE FADE END*/
 
 		/*2 IMAGE FADE */
-		.spotlights > section .fade-image2 {
+		.fade-image2 {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -4173,7 +4173,36 @@ button,
 			#intro {
 				background-attachment: scroll;
 			}
-
 		}
+
+
+/* Container holding the image and the text */
+.main-title-image-contianer {
+	position: relative;
+	display: flex;
+	text-align: center;
+	background-color: white;
+	align-content: center;
+	height: 65vh;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+.main-title-image-contianer-centered-text {
+	position: absolute;
+	z-index: 10; /* Ensure it's above images */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--maincolor);
+	/*font-size: 2.75em;*/ /* Adjust as needed */
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+	pointer-events: none; /* Prevent text from interfering with clicks on images */
+	background: var(--secondarycolor);
+	line-height: 1px;
+	padding-left: 8%;
+	padding-right: 8%;
+	display: block;
+}
 
 
