@@ -3142,6 +3142,11 @@ button,
 			-ms-flex: 1;
 		}
 
+			.spotlightHeader {
+				padding: 4em 5em 1em 5em;
+				width: 100%;
+			}
+
 			.spotlights > section > .content > .inner {
 				-moz-transform: translateX(0) translateY(0);
 				-webkit-transform: translateX(0) translateY(0);
@@ -4181,10 +4186,11 @@ button,
 	display: flex;
 	text-align: center;
 	align-content: center;
-	height: 90vh; /* Adjust this if needed */
+	height: 89vh; /* Adjust this if needed */
 	margin-left: 3%;
 	margin-right: 3%;
 	overflow: hidden;
+	padding-top: 2vh;
 }
 
 .main-title-image-container-centered-text {
@@ -4262,3 +4268,4 @@ button,
 .additional-info-page-content {
 	padding: 3% 10% 3% 10%;
 }
+
