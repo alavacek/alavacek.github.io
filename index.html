@@ -37,6 +37,7 @@
 					<li><a href="#intro">Welcome</a></li>
 					<li><a href="#one">Game Dev Portfolio</a></li>
 					<li><a href="#one2">XR Portfolio</a></li>
+					<li><a href="#one3">General Software Engineering</a></li>
 					<li><a href="#two">About Me</a></li>
 					<li><a href="#three">Get in touch</a></li>
 				</ul>
@@ -124,7 +125,7 @@
 							<div class="col-md-4 text-center col-padding animate-box">
 								<a href="Games/Overwatch.html" class="work" style="background-image: url(images/Games/ow4.gif);">
 									<div class="desc">
-										<h3>Overwatch</h3>
+										<h3>Overwatch 2</h3>
 										<span>Gameplay Programming Intern</span>
 									</div>
 								</a>
@@ -227,8 +228,8 @@
 
 							<div style="width: 30%;">
 								<!--											<div style=" height: 275px; display: inline-flex; justify-content: center; overflow: hidden; align-items: center; border: 3px solid var(--litepink); position: relative; top: 45px; background-color: var(--darkgreen4)">
-									<img src="images/Games/Cellosseum.png" alt="Cellosseum" style="max-width: 100%; object-fit: fill; max-height: 100%; padding: 0px; object-position: center top;">
-								</div>-->
+							<img src="images/Games/Cellosseum.png" alt="Cellosseum" style="max-width: 100%; object-fit: fill; max-height: 100%; padding: 0px; object-position: center top;">
+						</div>-->
 							</div>
 
 						</div>
@@ -278,7 +279,7 @@
 					</div>
 
 				</section>
-			
+
 				<!--FOR COLORING-->
 				<section style="display:none">
 
@@ -291,10 +292,80 @@
 				</section>
 			</section>
 
+			<section id="one3">
+				<div class="content">
+					<div class="inner">
+						<div>
+							<div style="width: 100%">
+								<h2 style="margin-bottom: 4px">CS Portfolio</h2>
+								<h3 style="margin-bottom: 4px">Compute Vision, ML, and Web Development</h3>
+
+								<h3></h3>
+
+								<ul class="actions">
+									<li><button id="textButton3" onclick="toggleTextGeneral()">Show More</button></li>
+								</ul>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+			<section id="moreSection3" class="wrapper style2 spotlights" style="display:none">
+
+				<section>
+					<div id="portfolio" style="width: 100%; height: auto">
+						<div class="spotlightHeader">
+
+						</div>
+
+						<div class="row-bootstrap rowSpecial">
+							<div class="col-md-2 text-center col-padding animate-box">
+
+							</div>
+
+							<div class="col-md-4 text-center col-padding animate-box">
+								<a href="SWE/supervision_report.pdf" class="work" style="background-image: url(SWE/supervision.gif); ">
+									<div class="desc">
+										<h3>
+											Deep Learning for Single Image Super Resolution
+										</h3>
+										<span>Contributor</span>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-4 text-center col-padding animate-box">
+								<a href="SWE/asteroids/asteroid.html" class="work" style="background-image: url(SWE/asteroid.gif);">
+									<div class="desc">
+										<h3>Html, Css, Javascript Game</h3>
+										<span>Solo Developer</span>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-md-2 text-center col-padding animate-box">
+
+							</div>
+
+
+						</div>
+					</div>
+
+				</section>
+
+			</section>
+
 		</section>
 
+
+
 		<!-- Two -->
-		<section id="two" class="wrapper style2-alt fade-up">
+		<section id="two" class="wrapper style2 fade-up">
 			<div class="inner">
 				<h2>About Me</h2>
 				<p>Currently studying Computer Science at the University of Michigan with a minor in Japanese Language</p>
@@ -335,13 +406,12 @@
 						<h3>Interests</h3>
 						<p>In terms of Game Development, I am most interested in working on RPGs, adventure games, and action games!</p>
 					</section>
-					<!--TODO:14:11 p1-gold tutorial to include resume-->
 				</div>
 			</div>
 		</section>
 
 		<!-- Three -->
-		<section id="three" class="wrapper style2 fade-up">
+		<section id="three" class="wrapper style2-alt fade-up">
 			<div class="inner">
 				<h2>Get in touch</h2>
 				<p>Please don't be afraid to reach out if you are interested in talking more about my projects and game development!</p>
@@ -455,6 +525,51 @@
 
 			let buttonText =
 				document.getElementById("textButton2");
+
+			if (buttonText.innerHTML == "Show Less") {
+
+				// Hide the text between the span
+				// elements
+				showMore.style.display = "none";
+
+				// Show the dots after the text
+				//points.style.display = "inline";
+
+				// Change the text on button to
+				// 'Show More'
+				buttonText.innerHTML = "Show More";
+			}
+
+			// If the hidden portion is revealed,
+			// we will change it back to be hidden
+			else {
+
+				// Show the text between the
+				// span elements
+				showMore.style.display = "inline";
+
+				// Hide the dots after the text
+				// points.style.display = "none";
+
+				// Change the text on button
+				// to 'Show Less'
+				buttonText.innerHTML = "Show Less";
+			}
+		}
+	</script>
+
+	<script>
+		function toggleTextGeneral() {
+
+			// Get all the elements from the page
+			//let points =
+			//	document.getElementById("points");
+
+			let showMore =
+				document.getElementById("moreSection3");
+
+			let buttonText =
+				document.getElementById("textButton3");
 
 			if (buttonText.innerHTML == "Show Less") {
 

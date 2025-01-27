@@ -1,0 +1,393 @@
+/* ============ Winter 2024 EECS 493 Assignment 3 Starter Code ============ */
+
+/* Main Containers */
+body,
+button {
+  font-family: VT323;
+}
+
+button {
+  font-size: xx-large;
+  background: darkslateblue;
+  color: #ffffff;
+  text-align: center;
+  height: 100px;
+  width: 180px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.outer-container {
+  height: 720px;
+  width: 1280px;
+  background: #eee;
+  border: 5px solid gainsboro;
+  margin-bottom: 100px;
+}
+
+
+.game-window {
+  height: 720px;
+  width: 1280px;
+  float: left;
+  position: relative;
+}
+
+/* Game Section */
+#actual-game {
+  height: 720px;
+  width: 1280px;
+  background-color: white;
+  z-index: 10;
+  right: 0px;
+  top: 0px;
+  display: none;
+}
+
+.curAsteroid {
+  position: absolute;
+  height: 42px;
+  width: 42px;
+  z-index: 9;
+  right: 0px;
+  top: 0px;
+}
+
+.curAsteroid img {
+  position: relative;
+  z-index: 10;
+  height: 80px;
+  left: -17px;
+  top: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Add your stylings here */
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.h2-inline {
+  display: inline;
+}
+
+.unbolded {
+  font-weight: normal;
+  display: inline;
+}
+
+  /* Main Menu */
+.main-menu {
+  display: inline;
+  height: 100%;
+  width: 100%;
+  background-image: url("../src/frontpage_background.jpg");
+  z-index: 0;
+  position: absolute;
+}
+
+.header-banner {
+  font-size: 75px;
+  color: #ffffff;
+  line-height: normal;
+  background:  darkslateblue;
+  text-align: center;
+  margin-top: 0px;
+  border-bottom: 5px solid gainsboro;
+  
+  }
+
+  .left-img {
+    float: left;
+    width: 7%;
+    padding-top: 0.3%;
+    padding-left: 1.5%;
+  }
+
+  .right-img {
+    float: right;
+    width: 7%;
+    padding-top: 0.3%;
+    padding-right: 1.5%;
+  }
+
+  .main-menu-button-group
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+  }
+  /* Settings */
+  .settings {
+    margin-left: 315px;
+    margin-top: -455px;
+    height: 690px;
+    width: 600px;
+    background:  darkslateblue;
+    border: 5px solid gainsboro;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+  }
+
+  .settings-section {
+    margin-bottom: 120px;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
+  .settings-button {
+    background: purple;
+    display: inline;
+  }
+
+  .settings-close-button {
+    background: purple;
+    display: inline;
+    margin-top: -50px
+  }
+
+  /* Tutorial */
+  .tutorial {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    z-index: 2;
+    position: absolute;
+    display: none;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .tutorial-section {
+    color: #000000;
+    font-size: 50px;
+  }
+
+  .tutorial-header {
+    font-size: 75px;
+    line-height: normal;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+  .p-inline {
+    display: inline;
+  }
+
+  .p-bold-inline {
+    font-weight: bold;
+    display: inline;
+  }
+
+  .p-bold {
+    font-weight: bold;
+  }
+
+  .p-italic {
+    font-style: italic;
+  }
+
+  .p-italic-inline {
+    font-style: italic;
+    display: inline;
+  }
+
+  .tutorial-images {
+    width: 100px;
+    margin-top: -20px;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .tutorial-button {
+    background-color: rgb(243, 243, 243);
+    color:#000000;
+    width: 200px;
+    height: 75px;
+    margin-top: -20px;
+  }
+
+  .get-ready {
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    display: none;
+    text-align: center;
+    line-height: normal;
+    font-size: 50px;
+    margin-top: 200px;
+  }
+
+  .get-ready-header {
+    font-size: 75px;
+    margin-bottom: 50px;
+  }
+
+  .score-board {
+    z-index: 4;
+    position: absolute;
+    display: inline;
+    text-align: center;
+    line-height: normal;
+    font-weight: normal;
+    float: right;
+    margin-left: 85%;
+    margin-top: 4px;
+  }
+
+  .score-board-header {
+    font-size: 60px;
+    color:#000000;
+    font-weight: normal;
+    margin-bottom: -3px;
+    margin-top: -3px;
+  }
+
+  .score-board-data {
+    font-size: 50px;
+    color: #0e076d;
+    margin-bottom: -3px;
+    margin-top: -3px;
+  }
+
+  .curShield {
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    z-index: 11;
+    right: 0px;
+    top: 0px;
+  }
+  
+  .curShield img {
+    position: relative;
+    z-index: 12;
+    height: 80px;
+    left: -17px;
+    top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .curPortal {
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    z-index: 13;
+    right: 0px;
+    top: 0px;
+  }
+  
+  .curPortal img {
+    position: relative;
+    z-index: 14;
+    height: 80px;
+    left: -17px;
+    top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .spawn-section {
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    position: absolute;
+    display: inline;
+  }
+
+  .rocket {
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    z-index: 16;
+    right: 640px;
+    top: 360px;
+  }
+  
+  .rocket img {
+    position: relative;
+    z-index: 17;
+    height: 80px;
+    left: -17px;
+    top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .game-over
+  {
+    background-color: darkslateblue;
+    position: relative;
+    z-index: 18;
+    display: none;
+    height: 45%;
+    width: 768px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 220px;
+    margin-left: 256px;
+  }
+
+  .game-over h2 {
+    font-weight: normal;
+    padding-top: 30px;
+    font-size: 40px;
+  }
+
+  .game-over button {
+    background-color: #ffffff;
+    color: black;
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 10px;
+    height: 60px;
+  }
+
+
