@@ -4207,6 +4207,7 @@ button,
 	padding-left: 8%;
 	padding-right: 8%;
 	display: block;
+	line-height: normal;
 }
 
 .main-title-image-container .crossfade-container {
